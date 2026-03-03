@@ -3,6 +3,7 @@ interface StatCardProps {
   value: number;
   color: 'gray' | 'blue' | 'green' | 'purple';
   subtext?: string;
+  onClick?: () => void; // Added onClick prop
 }
 
 const colors: Record<string, string> = {
@@ -19,8 +20,13 @@ const textColors: Record<string, string> = {
   purple: "text-purple-600 dark:text-purple-400",
 };
 
-export const StatCard = ({ label, value, color, subtext }: StatCardProps) => (
-  <div className={`p-6 rounded-3xl border ${colors[color]} transition-all hover:scale-105 duration-200`}>
+export const StatCard = ({ label, value, color, subtext, onClick }: StatCardProps) => (
+  <div 
+    onClick={onClick}
+    className={`p-6 rounded-3xl border ${colors[color]} transition-all hover:scale-105 duration-200 ${
+      onClick ? 'cursor-pointer active:scale-95' : ''
+    }`}
+  >
     <p className={`text-[10px] font-black uppercase tracking-widest ${textColors[color]} mb-1`}>
       {label}
     </p>
