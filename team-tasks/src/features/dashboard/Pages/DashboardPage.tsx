@@ -6,7 +6,7 @@ import { LoadingSkeleton } from '../../../shared/components/States';
 export const DashboardPage = () => {
   const { user } = useAuth();
   const { stats, isLoading } = useDashboardStats();
-  const isAdmin = user?.role === 'admin';
+
 
   if (isLoading) return <LoadingSkeleton />;
 
@@ -21,16 +21,6 @@ export const DashboardPage = () => {
         <StatCard label="To Do" value={stats.todo} color="gray" />
         <StatCard label="In Progress" value={stats.inProgress} color="blue" />
         <StatCard label="Done" value={stats.done} color="green" />
-
-        {/* Security check: only show team size to admins */}
-        {isAdmin && (
-          <StatCard 
-            label="Team Size" 
-            value={stats.totalMembers} 
-            color="purple" 
-            subtext="Total registered accounts"
-          />
-        )}
       </div>
 
       {/* Hero Welcome Section */}

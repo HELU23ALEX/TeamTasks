@@ -3,5 +3,5 @@ export interface DashboardStats {
   inProgress: number;
   done: number;
   totalTasks: number;
-  totalMembers: number;
+  // totalMembers: number;
 }
