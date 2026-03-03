@@ -21,7 +21,7 @@ export const authApi = {
 
       if (!isValid) {
         // Specific error for the UI to catch
-        throw new Error("Invalid email or password. Hint: use password123 for seeded users.");
+        throw new Error("Invalid email or password.");
       }
 
       return {

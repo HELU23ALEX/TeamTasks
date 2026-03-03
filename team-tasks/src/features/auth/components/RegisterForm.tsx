@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Button } from '../../../shared/components/Button';
@@ -29,31 +28,34 @@ export const RegisterForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       {errorMsg && (
-        <div className="p-3 bg-red-50 border border-red-200 text-red-600 text-xs font-bold rounded-xl animate-in fade-in">
+        <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 text-xs font-bold rounded-xl animate-in fade-in">
           ⚠️ {errorMsg}
         </div>
       )}
 
       <div className="space-y-1">
-        <label className="text-[10px] font-black uppercase text-gray-400 ml-1">Full Name</label>
+        <label className="text-[10px] font-black uppercase text-gray-400 dark:text-gray-500 ml-1">Full Name</label>
         <input 
-          placeholder="John Doe" className="w-full p-3 border rounded-xl dark:bg-gray-900 dark:text-white" 
+          placeholder="John Doe" 
+          className="w-full p-3 border rounded-xl bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 transition-all" 
           value={name} onChange={e => setName(e.target.value)} required 
         />
       </div>
 
       <div className="space-y-1">
-        <label className="text-[10px] font-black uppercase text-gray-400 ml-1">Email</label>
+        <label className="text-[10px] font-black uppercase text-gray-400 dark:text-gray-500 ml-1">Email</label>
         <input 
-          type="email" placeholder="user@company.com" className="w-full p-3 border rounded-xl dark:bg-gray-900 dark:text-white" 
+          type="email" placeholder="user@company.com" 
+          className="w-full p-3 border rounded-xl bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 transition-all" 
           value={email} onChange={e => setEmail(e.target.value)} required 
         />
       </div>
 
       <div className="space-y-1">
-        <label className="text-[10px] font-black uppercase text-gray-400 ml-1">Password</label>
+        <label className="text-[10px] font-black uppercase text-gray-400 dark:text-gray-500 ml-1">Password</label>
         <input 
-          type="password" placeholder="Create a password" className="w-full p-3 border rounded-xl dark:bg-gray-900 dark:text-white" 
+          type="password" placeholder="Create a password" 
+          className="w-full p-3 border rounded-xl bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 transition-all" 
           value={password} onChange={e => setPassword(e.target.value)} required 
         />
       </div>
